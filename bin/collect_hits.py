@@ -57,20 +57,6 @@ def main():
     # index query sequences (for the leading record in each output file)
     queries = SeqIO.index(args.query, "fasta")
 
-    # lazily index each database FASTA for fast random access by id
-    db_index = {}
-
-    def get_db(stem):
-        if stem not in db_index:
-            for ext in (".fasta", ".fa", ".faa"):
-                p = os.path.join(args.db_dir, stem + ext)
-                if os.path.exists(p):
-                    db_index[stem] = SeqIO.index(p, "fasta")
-                    break
-            else:
-                db_index[stem] = None
-        return db_index[stem]
-
     # gather hits per query: {query_id: [(evalue, db_stem, target_id)]}
     hits = {}
     n_tables = 0
@@ -82,6 +68,40 @@ def main():
 
     if n_tables == 0:
         sys.exit("ERROR: no raw .tbl files found in " + args.raw_dir)
+
+    # Pre-fetch every hit sequence in a single pass over the databases, opening
+    # each database FASTA exactly once and closing it before moving on. Earlier
+    # this code cached every db's SeqIO.index and never closed them; SeqIO.index
+    # keeps the file open, so over thousands of proteomes (db/fungi_BFD) that
+    # exhausted the open-file limit ("too many open files"). Here at most one
+    # database index is open at a time.
+    needed = {}  # db_stem -> set(target_id)
+    for hitlist in hits.values():
+        for _ev, db_stem, target in hitlist:
+            needed.setdefault(db_stem, set()).add(target)
+
+    def find_db(stem):
+        for ext in (".fasta", ".fa", ".faa"):
+            p = os.path.join(args.db_dir, stem + ext)
+            if os.path.exists(p):
+                return p
+        return None
+
+    fetched = {}  # (db_stem, target) -> SeqRecord (materialized; index can close)
+    for db_stem in sorted(needed):
+        p = find_db(db_stem)
+        if p is None:
+            sys.stderr.write(f"  warn: db {db_stem} not found in {args.db_dir}\n")
+            continue
+        db = SeqIO.index(p, "fasta")
+        try:
+            for target in needed[db_stem]:
+                if target in db:
+                    fetched[(db_stem, target)] = db[target]
+                else:
+                    sys.stderr.write(f"  warn: {target} not found in db {db_stem}\n")
+        finally:
+            db.close()
 
     os.makedirs(args.out_dir, exist_ok=True)
     total_hits = 0
@@ -100,15 +120,15 @@ def main():
                 if key in seen:
                     continue
                 seen.add(key)
-                db = get_db(db_stem)
-                if db is None or target not in db:
-                    sys.stderr.write(f"  warn: {target} not found in db {db_stem}\n")
-                    continue
-                rec = db[target]
+                rec = fetched.get(key)
+                if rec is None:
+                    continue  # missing sequence already warned during pre-fetch
                 desc = rec.description[len(rec.id):].strip()
-                # prefix the hit id with the species name from the organism= field
+                # prefix the hit id with the species name from the organism= field;
+                # otherwise fall back to the db filename stem (BFD files are named
+                # <species>.proteins -> drop the trailing .proteins)
                 m = re.search(r"organism=(\S+)", desc)
-                species = m.group(1) if m else db_stem
+                species = m.group(1) if m else re.sub(r"\.proteins$", "", db_stem)
                 # sanitize ':' (and ';' '|' ',' '(' ')') in the id so the name is
                 # safe for downstream MSA / tree-building tools
                 hit_id = re.sub(r"[:;|,()]", "_", rec.id)
