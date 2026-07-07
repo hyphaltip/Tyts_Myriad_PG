@@ -1,0 +1,14 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+VDAG_JR2_Chr5g00240a-00001 -          KAN0768429.1         -            3.1e-93  312.1  23.0   3.6e-93  311.9  23.0   1.0   1   0   0   1   1   1   1 | transcript=VDAG_JR2_Chr5g00240a-00001 | gene=VDAG_JR2_Chr5g00240a | organism=Verticillium_dahliae_JR2 | gene_product=unspecified product | transcript_product=unspecified product | location=CP009078.1:63545-64657(-) | protein_length=370 | sequence_SO=chromosome | SO=protein_coding_gene | is_pseudo=false
+#
+# Program:         phmmer
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /scratch/jstajich/25821825/queries.vmbplr.fa
+# Target file:     /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_VdahliaeJR2_AnnotatedProteins.fasta
+# Option settings: phmmer --tblout /rhome/jstajich/projects/Tyts_Myriad_PG/results/fungi/phmmer/raw/FungiDB-68_VdahliaeJR2_AnnotatedProteins.tbl.partial.1013743 --noali --notextw -E 1e-20 --cpu 8 /scratch/jstajich/25821825/queries.vmbplr.fa /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_VdahliaeJR2_AnnotatedProteins.fasta 
+# Current dir:     /bigdata/stajichlab/jstajich/projects/Tyts_Myriad_PG
+# Date:            Wed Jun 24 15:16:12 2026
+# [ok]

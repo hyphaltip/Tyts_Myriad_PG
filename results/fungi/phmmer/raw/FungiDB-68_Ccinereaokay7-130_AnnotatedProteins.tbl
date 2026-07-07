@@ -1,0 +1,13 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+#
+# Program:         phmmer
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /scratch/jstajich/25821825/queries.vmbplr.fa
+# Target file:     /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_Ccinereaokay7-130_AnnotatedProteins.fasta
+# Option settings: phmmer --tblout /rhome/jstajich/projects/Tyts_Myriad_PG/results/fungi/phmmer/raw/FungiDB-68_Ccinereaokay7-130_AnnotatedProteins.tbl.partial.1013743 --noali --notextw -E 1e-20 --cpu 8 /scratch/jstajich/25821825/queries.vmbplr.fa /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_Ccinereaokay7-130_AnnotatedProteins.fasta 
+# Current dir:     /bigdata/stajichlab/jstajich/projects/Tyts_Myriad_PG
+# Date:            Wed Jun 24 15:16:09 2026
+# [ok]

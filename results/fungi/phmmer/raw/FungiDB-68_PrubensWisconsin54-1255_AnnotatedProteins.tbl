@@ -1,0 +1,15 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+CAP99317:RNA-p1      -          KAN0768429.1         -           1.9e-103  345.9  18.8  2.3e-103  345.6  18.8   1.0   1   0   0   1   1   1   1 | transcript=CAP99317:RNA | gene=PCH_Pc22g20290 | organism=Penicillium_rubens_Wisconsin_54-1255 | gene_product=unspecified product | transcript_product=unspecified product | location=Pc00c22:4784687-4785907(-) | protein_length=369 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+CAP86665:RNA-p1      -          KAN0768429.1         -            5.4e-23   81.1  14.9   6.7e-23   80.8  14.9   1.0   1   0   0   1   1   1   1 | transcript=CAP86665:RNA | gene=PCH_Pc20g13360 | organism=Penicillium_rubens_Wisconsin_54-1255 | gene_product=unspecified product | transcript_product=unspecified product | location=Pc00c20:3095886-3097156(-) | protein_length=402 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+#
+# Program:         phmmer
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /scratch/jstajich/25821825/queries.vmbplr.fa
+# Target file:     /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_PrubensWisconsin54-1255_AnnotatedProteins.fasta
+# Option settings: phmmer --tblout /rhome/jstajich/projects/Tyts_Myriad_PG/results/fungi/phmmer/raw/FungiDB-68_PrubensWisconsin54-1255_AnnotatedProteins.tbl.partial.1013743 --noali --notextw -E 1e-20 --cpu 8 /scratch/jstajich/25821825/queries.vmbplr.fa /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_PrubensWisconsin54-1255_AnnotatedProteins.fasta 
+# Current dir:     /bigdata/stajichlab/jstajich/projects/Tyts_Myriad_PG
+# Date:            Wed Jun 24 15:16:11 2026
+# [ok]

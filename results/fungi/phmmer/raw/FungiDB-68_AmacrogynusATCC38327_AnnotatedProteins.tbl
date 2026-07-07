@@ -1,0 +1,17 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+AMAG_08880-t26_1-p1  -          KAN0768429.1         -            1.8e-53  182.0  14.4   2.3e-53  181.7  14.4   1.0   1   0   0   1   1   1   1 | transcript=AMAG_08880-t26_1 | gene=AMAG_08880 | organism=Allomyces_macrogynus_ATCC_38327 | gene_product=hypothetical protein | transcript_product=hypothetical protein | location=GG745343:350851-352176(-) | protein_length=359 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+AMAG_16312-t26_1-p1  -          KAN0768429.1         -            5.8e-53  180.3  14.1   7.3e-53  180.0  14.1   1.0   1   0   0   1   1   1   1 | transcript=AMAG_16312-t26_1 | gene=AMAG_16312 | organism=Allomyces_macrogynus_ATCC_38327 | gene_product=hypothetical protein | transcript_product=hypothetical protein | location=GG745375:155113-156341(+) | protein_length=354 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+AMAG_00139-t26_1-p1  -          KAN0768429.1         -            5.6e-51  173.8  16.1   7.3e-51  173.4  16.1   1.0   1   0   0   1   1   1   1 | transcript=AMAG_00139-t26_1 | gene=AMAG_00139 | organism=Allomyces_macrogynus_ATCC_38327 | gene_product=hypothetical protein | transcript_product=hypothetical protein | location=GG745328:495276-496613(-) | protein_length=359 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+AMAG_16353-t26_1-p1  -          KAN0768429.1         -            7.7e-22   77.9   3.2   9.6e-22   77.6   3.2   1.1   1   0   0   1   1   1   1 | transcript=AMAG_16353-t26_1 | gene=AMAG_16353 | organism=Allomyces_macrogynus_ATCC_38327 | gene_product=hypothetical protein | transcript_product=hypothetical protein | location=GG745375:270713-271700(-) | protein_length=260 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+#
+# Program:         phmmer
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /scratch/jstajich/25821825/queries.vmbplr.fa
+# Target file:     /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_AmacrogynusATCC38327_AnnotatedProteins.fasta
+# Option settings: phmmer --tblout /rhome/jstajich/projects/Tyts_Myriad_PG/results/fungi/phmmer/raw/FungiDB-68_AmacrogynusATCC38327_AnnotatedProteins.tbl.partial.1013743 --noali --notextw -E 1e-20 --cpu 8 /scratch/jstajich/25821825/queries.vmbplr.fa /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_AmacrogynusATCC38327_AnnotatedProteins.fasta 
+# Current dir:     /bigdata/stajichlab/jstajich/projects/Tyts_Myriad_PG
+# Date:            Wed Jun 24 15:16:08 2026
+# [ok]

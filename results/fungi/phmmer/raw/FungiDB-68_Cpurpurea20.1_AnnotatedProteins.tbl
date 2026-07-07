@@ -1,0 +1,15 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+CCE33054.1           -          KAN0768429.1         -            9.9e-94  313.4  21.4   1.1e-93  313.2  21.4   1.0   1   0   0   1   1   1   1 | transcript=CPUR_06977_t1 | gene=CPUR_06977 | organism=Claviceps_purpurea_20.1 | gene_product=Probable PGU1-Endo-polygalacturonase [Source:UniProtKB/TrEMBL;Acc:M1WHN8] | transcript_product=Probable PGU1-Endo-polygalacturonase [Source:UniProtKB/TrEMBL;Acc:M1WHN8] | location=CAGA01000050:189229-190431(+) | protein_length=369 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+CCE33055.1           -          KAN0768429.1         -            6.9e-90  300.7  19.4   8.6e-90  300.4  19.4   1.0   1   0   0   1   1   1   1 | transcript=CPUR_06978_t1 | gene=CPUR_06978 | organism=Claviceps_purpurea_20.1 | gene_product=Probable PGU1-Endo-polygalacturonase [Source:UniProtKB/TrEMBL;Acc:M1WAJ8] | transcript_product=Probable PGU1-Endo-polygalacturonase [Source:UniProtKB/TrEMBL;Acc:M1WAJ8] | location=CAGA01000050:191587-192800(+) | protein_length=370 | sequence_SO=supercontig | SO=protein_coding_gene | is_pseudo=false
+#
+# Program:         phmmer
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /scratch/jstajich/25821825/queries.vmbplr.fa
+# Target file:     /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_Cpurpurea20.1_AnnotatedProteins.fasta
+# Option settings: phmmer --tblout /rhome/jstajich/projects/Tyts_Myriad_PG/results/fungi/phmmer/raw/FungiDB-68_Cpurpurea20.1_AnnotatedProteins.tbl.partial.1013743 --noali --notextw -E 1e-20 --cpu 8 /scratch/jstajich/25821825/queries.vmbplr.fa /rhome/jstajich/projects/Tyts_Myriad_PG/db/fungi/FungiDB-68_Cpurpurea20.1_AnnotatedProteins.fasta 
+# Current dir:     /bigdata/stajichlab/jstajich/projects/Tyts_Myriad_PG
+# Date:            Wed Jun 24 15:16:09 2026
+# [ok]
